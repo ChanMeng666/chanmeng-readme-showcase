@@ -58,7 +58,7 @@ capture can be reproduced — and tweaked — months later.
 }
 ```
 
-## Action vocabulary (exactly six)
+## Action vocabulary (exactly seven)
 
 Every action accepts `optional: true` (failure → warn + continue) and
 `timeoutMs` (default 10000).
@@ -66,11 +66,12 @@ Every action accepts `optional: true` (failure → warn + continue) and
 | action | fields | notes |
 |---|---|---|
 | `goto` | `url` | resolved against `baseUrl`; networkidle with domcontentloaded fallback |
-| `click` | `selector` | any Playwright selector incl. `text=`, `:has-text()` |
+| `click` | `selector`, `force?` | any Playwright selector incl. `text=`, `:has-text()`; `force: true` skips actionability checks (element covered by an overlay) |
 | `fill` | `selector`, `value`, `delayMs?` | with `delayMs`, types per-character — use ~60–90ms in demos so typing reads as human |
 | `hover` | `selector` | |
 | `scroll` | `to: "bottom"\|"top"\|"selector"`, `selector?`, `by?` | smooth-scrolls, then settles 600ms |
 | `wait` | `ms` or `selector` | selector form waits for the element to appear |
+| `evaluate` | `script` | JavaScript expression run in the page (e.g. remove a banner Playwright cannot click); escape hatch, prefer the actions above |
 
 ## Site-type recipes
 

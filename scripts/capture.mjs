@@ -131,15 +131,37 @@ async function captureDemo(browser, manifest) {
   const page = await preparePage(context);
   let video;
   try {
-    await gotoWithFallback(page, scenario.baseUrl);
-    await settle(page);
-    await runActions(page, scenario.setup ?? [], { baseUrl: scenario.baseUrl, label: "setup" });
-    await page.waitForTimeout(800); // opening beat before the action starts
-    await runActions(page, demo.steps, {
-      baseUrl: scenario.baseUrl,
-      stepPauseMs: demo.stepPauseMs ?? 600,
-      label: "demo.steps",
-    });
+    // If the demo's first step is already a goto, skip the separate baseline
+    // navigation — it would be a wasted double load. Run setup after that
+    // goto instead (so cookie banners on the landing page are dismissed).
+    // Otherwise warm up on baseUrl so setup fires on the right origin.
+    const firstStepIsGoto = demo.steps?.[0]?.action === "goto";
+    if (firstStepIsGoto) {
+      // Run the first goto step, settle, run setup (cookie banners), then
+      // the opening beat and the remaining steps.
+      const [firstStep, ...rest] = demo.steps;
+      await runActions(page, [firstStep], { baseUrl: scenario.baseUrl, label: "demo.steps" });
+      await settle(page);
+      await runActions(page, scenario.setup ?? [], { baseUrl: scenario.baseUrl, label: "setup" });
+      await page.waitForTimeout(800); // opening beat
+      await runActions(page, rest, {
+        baseUrl: scenario.baseUrl,
+        stepPauseMs: demo.stepPauseMs ?? 600,
+        label: "demo.steps",
+      });
+    } else {
+      // Use a short networkidle budget; sites with analytics/websockets never
+      // reach networkidle and the 30s default bloats every demo recording.
+      await gotoWithFallback(page, scenario.baseUrl, { timeoutMs: 5000 });
+      await settle(page);
+      await runActions(page, scenario.setup ?? [], { baseUrl: scenario.baseUrl, label: "setup" });
+      await page.waitForTimeout(800); // opening beat before the action starts
+      await runActions(page, demo.steps, {
+        baseUrl: scenario.baseUrl,
+        stepPauseMs: demo.stepPauseMs ?? 600,
+        label: "demo.steps",
+      });
+    }
     await page.waitForTimeout(1200); // closing beat so the GIF doesn't cut hard
   } finally {
     video = page.video();

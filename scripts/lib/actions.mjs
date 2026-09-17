@@ -37,7 +37,10 @@ async function runOne(page, step, baseUrl) {
       await settle(page);
       break;
     case "click":
-      await page.click(step.selector, { timeout });
+      await page.click(step.selector, { timeout, force: step.force ?? false });
+      break;
+    case "evaluate":
+      await page.evaluate(step.script);
       break;
     case "fill":
       if (step.delayMs) {

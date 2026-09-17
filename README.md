@@ -85,7 +85,7 @@ examples/                   a real scenario from the pilot project
 
 ## Scenario format
 
-Six actions — `goto, click, fill, scroll, hover, wait` — plus per-page
+Seven actions — `goto, click, fill, scroll, hover, wait, evaluate` — plus per-page
 viewport/fullPage settings. See
 [`references/scenario-schema.md`](references/scenario-schema.md) and the
 [pilot example](examples/gradient-svg-generator.scenario.json).
