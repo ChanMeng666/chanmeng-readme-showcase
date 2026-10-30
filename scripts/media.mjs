@@ -53,7 +53,7 @@ function encodeWebp(src, dest, quality) {
   if (hasSharp) {
     // sharp-cli writes <basename>.webp into -o <dir>; encode via a temp dir
     // so quality retries don't clobber each other.
-    const tmp = path.join(os.tmpdir(), `readme-showcase-webp-${quality}`);
+    const tmp = path.join(os.tmpdir(), `chanmeng-readme-showcase-webp-${quality}`);
     mkdirSync(tmp, { recursive: true });
     run("sharp", ["-i", src, "-o", tmp, "-f", "webp", "-q", String(quality)]);
     const produced = path.join(tmp, path.basename(src, ".png") + ".webp");

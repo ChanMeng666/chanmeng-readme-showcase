@@ -1,4 +1,4 @@
-# readme-showcase
+# chanmeng-readme-showcase
 
 A [Claude Code](https://claude.com/claude-code) skill that captures polished
 screenshots and a short demo recording of any deployed web project, then embeds
@@ -56,12 +56,12 @@ the skill replaces the block contents instead of duplicating them.
 ## Install
 
 ```bash
-git clone https://github.com/ChanMeng666/readme-showcase.git
+git clone https://github.com/ChanMeng666/chanmeng-readme-showcase.git
 # symlink (or copy) into your personal skills directory:
 #   macOS/Linux
-ln -s "$(pwd)/readme-showcase" ~/.claude/skills/readme-showcase
+ln -s "$(pwd)/chanmeng-readme-showcase" ~/.claude/skills/chanmeng-readme-showcase
 #   Windows (PowerShell)
-New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\skills\readme-showcase" -Target "D:\path\to\readme-showcase"
+New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\skills\chanmeng-readme-showcase" -Target "D:\path\to\chanmeng-readme-showcase"
 ```
 
 Then ask Claude Code things like:

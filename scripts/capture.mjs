@@ -36,7 +36,7 @@ const onlyPage = flag("page");
 const headed = args.includes("--headed");
 
 const scenario = JSON.parse(readFileSync(scenarioPath, "utf8"));
-const work = path.resolve(flag("work") ?? path.join(os.tmpdir(), "readme-showcase", scenario.project ?? "untitled"));
+const work = path.resolve(flag("work") ?? path.join(os.tmpdir(), "chanmeng-readme-showcase", scenario.project ?? "untitled"));
 mkdirSync(work, { recursive: true });
 
 const VIEWPORT_DEFAULTS = {

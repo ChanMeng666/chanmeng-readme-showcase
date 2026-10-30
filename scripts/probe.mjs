@@ -28,7 +28,7 @@ if (!url) {
   console.error("Usage: node probe.mjs --url <liveUrl> [--work <dir>]");
   process.exit(2);
 }
-const work = path.resolve(flag("work") ?? path.join(os.tmpdir(), "readme-showcase", "probe"));
+const work = path.resolve(flag("work") ?? path.join(os.tmpdir(), "chanmeng-readme-showcase", "probe"));
 mkdirSync(work, { recursive: true });
 
 const browser = await launchBrowser();
