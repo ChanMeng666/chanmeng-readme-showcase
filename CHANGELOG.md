@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Demo capture skips the duplicate baseline load when the first demo step is a `goto`, runs setup after that navigation, and caps the baseline networkidle wait at 5s.
+- A plugin icon, `.claude-plugin/icon.png`: the Chan Meng monkey on a Caldera palette colour, so catalogs show it instead of a letter.
 
 ## [0.1.0]
 
