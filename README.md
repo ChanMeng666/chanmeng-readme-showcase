@@ -55,6 +55,21 @@ the skill replaces the block contents instead of duplicating them.
 
 ## Install
 
+### As a Claude Code plugin (recommended)
+
+```text
+/plugin install chanmeng-readme-showcase --marketplace ChanMeng666/chanmeng-readme-showcase
+```
+
+On Claude Code older than 2.1.275, add the marketplace first:
+
+```text
+/plugin marketplace add ChanMeng666/chanmeng-readme-showcase
+/plugin install chanmeng-readme-showcase@chanmeng-readme-showcase
+```
+
+### Manual install
+
 ```bash
 git clone https://github.com/ChanMeng666/chanmeng-readme-showcase.git
 # symlink (or copy) into your personal skills directory:

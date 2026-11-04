@@ -7,12 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-04
+
+### Added
+- Claude Code plugin packaging: `.claude-plugin/plugin.json` and `marketplace.json`. Install with
+  `/plugin install chanmeng-readme-showcase --marketplace ChanMeng666/chanmeng-readme-showcase`. The repo, marketplace, plugin and skill all
+  use the name `chanmeng-readme-showcase`. The manual `git clone` install still works as before.
+- CI runs `claude plugin validate --strict` on the manifests.
+
 ### Added
 - `evaluate` scenario action (run a JavaScript expression in the page) and a `force` option on `click`.
 - Standard community-health documentation (`CONTRIBUTING.md`, `SECURITY.md`, `SUPPORT.md`, `GOVERNANCE.md`, this changelog).
 
 ### Changed
 - Demo capture skips the duplicate baseline load when the first demo step is a `goto`, runs setup after that navigation, and caps the baseline networkidle wait at 5s.
+- A plugin icon, `.claude-plugin/icon.png`: the Chan Meng monkey on a Caldera palette colour, so catalogs show it instead of a letter.
 
 ## [0.1.0]
 
