@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "chanmeng-readme-showcase",
+  "version": "0.2.0",
+  "description": "Claude Code skill that captures polished screenshots and demo GIFs of deployed web projects and embeds them into GitHub READMEs — Playwright capture, ffmpeg GIF/MP4 pipeline, reproducible scenario files",
+  "author": {
+    "name": "Chan Meng",
+    "url": "https://github.com/ChanMeng666"
+  },
+  "homepage": "https://github.com/ChanMeng666/chanmeng-readme-showcase",
+  "repository": "https://github.com/ChanMeng666/chanmeng-readme-showcase",
+  "license": "MIT",
+  "keywords": [
+    "ai-agents",
+    "claude",
+    "claude-code",
+    "claude-code-skill",
+    "demo-gif",
+    "developer-tools",
+    "ffmpeg",
+    "github-readme",
+    "playwright",
+    "readme",
+    "screen-recording",
+    "screenshot-automation"
+  ],
+  "skills": [
+    "./"
+  ]
+}

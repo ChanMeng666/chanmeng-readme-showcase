@@ -1,0 +1,28 @@
+{
+  "name": "chanmeng-readme-showcase",
+  "description": "Chan Meng's chanmeng-readme-showcase plugin for Claude Code.",
+  "owner": {
+    "name": "Chan Meng",
+    "url": "https://github.com/ChanMeng666"
+  },
+  "plugins": [
+    {
+      "name": "chanmeng-readme-showcase",
+      "source": "./",
+      "description": "Claude Code skill that captures polished screenshots and demo GIFs of deployed web projects and embeds them into GitHub READMEs — Playwright capture, ffmpeg GIF/MP4 pipeline, reproducible scenario files",
+      "category": "documentation",
+      "tags": [
+        "ai-agents",
+        "claude",
+        "claude-code",
+        "claude-code-skill",
+        "demo-gif",
+        "developer-tools",
+        "ffmpeg",
+        "github-readme",
+        "playwright",
+        "readme"
+      ]
+    }
+  ]
+}
